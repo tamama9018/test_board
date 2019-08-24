@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestBoard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <a href="/" class="home-link header-link">HOME</a>
+        </div>
+
+        <div class="header-right">
+          <ul>
+            <% if session[:user_id] %>
+            <li>
+              <%= link_to(@current_user.name, "#") %>
+            </li>
+            <li>
+              <%= link_to("投稿一覧", "/posts/index") %>
+            </li>
+
+            <li>
+              <%= link_to("投稿", "/posts/new") %>
+            </li>
+
+            <li>
+              <%= link_to("ログアウト", "/user/logout", {method: "post"}) %>
+            </li>
+
+            <% else %>
+
+            <li>
+              <%= link_to("About", "/about") %>
+            </li>
+
+            <li>
+              <%= link_to("ログイン", "/user/login") %>
+            </li>
+            <% end %>
+          </ul>
+
+        </div>
+      </div>
+    </header>
+    <% if flash[:notice] %>
+     <div class="flash">
+       <%= flash[:notice] %>
+     </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

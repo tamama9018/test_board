@@ -1,0 +1,117 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ /* 共通=========================== */
+ *{
+   box-sizing: border-box;
+ }
+
+ body{
+   margin: 0;
+   background-color: rgb(247, 247, 247);
+ }
+
+ ul, li {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+ }
+
+ a {
+   text-decoration: none;
+   color: #2d3133;
+   font-size: 14px;
+ }
+
+ h1, h2, h3, h4, h5, h6, p {
+   margin: 0;
+ }
+
+ .main{
+   position: absolute;
+   top: 80px;
+   width: 100%;
+   margin-top: 40px;
+ }
+
+h1{
+    font-size: 60px;
+
+    color: rgb(195, 195, 195);
+    padding: 20px 0;
+}
+ /* フラッシュ=========================== */
+ .flash{
+   color: white;
+   font-size: 18px;
+   padding: 10px 0;
+   position: absolute;
+   top: 64px;
+   background: rgb(251, 170, 88);
+   z-index: 10;
+   text-align: center;
+   width: 100%;
+ }
+
+ /* ヘッダー=========================== */
+
+ header{
+    height: 64px;
+    width: 100%;
+    position: absolute;
+    background-color:rgba(20, 192, 222, 0.72);
+    position: fixed;
+    z-index: 10;
+  }
+
+  .container{
+    margin:0 auto;
+    width:100%;
+  }
+
+  .home-link{
+    color:white;
+    font-size: 20px;
+    line-height: 65px;
+  }
+
+  .header-left{
+    float: left;
+  }
+
+ .header-right{
+   float: right;
+   margin-right: 10px;
+ }
+
+ .header-right a{
+   color:white;
+   font-size: 18px;
+   line-height: 65px;
+   margin-right: 20px;
+ }
+
+
+ .header-link{
+   background-color:rgba(66, 161, 249, 0.38);
+   display:block;
+   padding: 0 10px;
+ }
+
+ header li{
+   float: left;
+ }

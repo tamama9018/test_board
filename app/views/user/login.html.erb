@@ -1,0 +1,21 @@
+
+<div class="main user user-login">
+  <h1>ログインする</h1>
+  <%= form_tag("/user/login_check") do %>
+    <div class="input-form">
+      <p>ユーザーID</p>
+      <input class="form" type="text" name="name" value="">
+    </div>
+
+    <div class="input-form">
+      <p>パスワード</p>
+      <input class="form" type="password" name="pass" value="">
+    </div>
+
+    <div class="input-form">
+      <input type="submit" name="" value="ログイン">
+    </div>
+
+  <% end %>
+
+</div>
