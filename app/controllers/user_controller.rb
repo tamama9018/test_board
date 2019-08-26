@@ -8,9 +8,8 @@ before_action :restruct_login_user, {only: [:login, :login_check]}
   end
 
   def login_check
-    @user = User.find_by(name: params[:name],
-                        pass: params[:pass])
-    if @user
+    @user = User.find_by(name: params[:name])
+    if @user && @user.authenticate(params[:pass])
       session[:user_id] = @user.id
       redirect_to("/posts/index")
     else
