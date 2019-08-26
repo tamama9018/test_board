@@ -1,5 +1,9 @@
 
-<div class="main user user-login">
+<div class="main user edit">
+  <% if @current_user.image_name == nil %>
+  <img src="/defult.jpg" alt="">
+  <% end %>
+
   <%= form_tag("/user/#{@current_user.id}/edit_user") do %>
     <div class="input-form">
       <p>新しいユーザー名</p>

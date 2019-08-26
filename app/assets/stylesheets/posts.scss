@@ -5,9 +5,8 @@
 /* new============================== */
 
 .posts-new textarea{
-  margin-top: 20px;
   width:50%;
-  height: 140px;
+  height: 70px;
   padding: 10px;
   font-size: 20px;
   resize: none;
@@ -17,6 +16,7 @@
 .posts-new input{
   margin: 0 auto;
   padding: 50px 0;
+  margin-bottom: 20px;
 }
 
 /* index============================== */
@@ -45,7 +45,7 @@
   img{
       width: 50px;
       height: 50px;
-      border-radius: 40%;
+      border-radius: 100%;
       box-shadow: 0 2px 6px #c1ced7;
       object-fit: cover;
   }

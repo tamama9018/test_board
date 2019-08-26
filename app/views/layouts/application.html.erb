@@ -22,16 +22,11 @@
         <div class="header-right">
           <ul>
             <% if session[:user_id] %>
-            <li>
-              <%= link_to(@current_user.name, "/user/#{@current_user.id}/edit") %>
-            </li>
-            <li>
-              <%= link_to("投稿一覧", "/posts/index") %>
-            </li>
 
             <li>
-              <%= link_to("投稿", "/posts/new") %>
+              <%= link_to("設定", "/user/#{@current_user.id}/edit") %>
             </li>
+
 
             <li>
               <%= link_to("ログアウト", "/user/logout", {method: "post"}) %>
