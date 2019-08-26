@@ -1,6 +1,20 @@
 class UserController < ApplicationController
-before_action :restruct_logout_user, {only: [:logout]}
+before_action :restruct_logout_user, {only: [:logout, :edit, :edit_user]}
 before_action :restruct_login_user, {only: [:login, :login_check]}
+
+  def edit_user
+      if params[:pass1] == params[:pass2]
+          @current_user.name = params[:name]
+          @current_user.password = params[:pass2]
+          @current_user.save
+          redirect_to("/posts/index")
+      else
+          render("user/edit")
+      end
+  end
+
+  def edit
+  end
 
   def logout
     session[:user_id] = nil

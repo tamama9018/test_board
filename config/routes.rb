@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   #user=====================>
+  post 'user/:id/edit_user' => 'user#edit_user'
+  get 'user/:id/edit' => 'user#edit'
   post 'user/logout' => 'user#logout'
   post 'user/login_check' => 'user#login_check'
   get 'user/login' => 'user#login'

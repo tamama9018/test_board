@@ -1,0 +1,25 @@
+
+<div class="main user user-login">
+  <%= form_tag("/user/#{@current_user.id}/edit_user") do %>
+    <div class="input-form">
+      <p>新しいユーザー名</p>
+      <input class="form" type="text" name="name" value="<%= @current_user.name %>">
+    </div>
+
+    <div class="input-form">
+      <p>新しいパスワード</p>
+      <input class="form" type="password" name="pass1">
+    </div>
+
+    <div class="input-form">
+      <p>パスワード確認</p>
+      <input class="form" type="password" name="pass2">
+    </div>
+
+    <div class="input-form">
+      <input type="submit" name="" value="変更">
+    </div>
+
+  <% end %>
+
+</div>
