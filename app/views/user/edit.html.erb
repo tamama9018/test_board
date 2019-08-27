@@ -2,6 +2,8 @@
 <div class="main user edit">
   <% if @current_user.image_name == nil %>
   <img src="/defult.jpg" alt="">
+  <% else %>
+  <img src="<% @current_user.image_name %>" alt="">
   <% end %>
 
   <%= form_tag("/user/#{@current_user.id}/edit_user") do %>
