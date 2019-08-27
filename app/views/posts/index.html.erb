@@ -7,15 +7,15 @@
     <% end %>
   <div class="container">
        <% @posts.each do |post| %>
-       <% user = User.find_by(id: post.user_id) %>
+       <% @user = User.find_by(id: post.user_id) %>
         <div class="post-container">
          <div class="icon">
-           <% if user.image_name == nil %>
+           <% if @user.image_name == nil %>
              <img src="/defult.jpg">
            <% end %>
           </div>
           <div class="user-name">
-           <%= user.name %>
+           <%= @user.name %>
          </div>
           <div class="post-content">
             <%= post.content %>
