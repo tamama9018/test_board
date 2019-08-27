@@ -1,12 +1,14 @@
-
 <div class="main user edit">
-  <% if @current_user.image_name == nil %>
-  <img src="/defult.jpg" alt="">
-  <% else %>
-  <img src="<% @current_user.image_name %>" alt="">
-  <% end %>
 
-  <%= form_tag("/user/#{@current_user.id}/edit_user") do %>
+  <%= form_tag("/user/#{@current_user.id}/edit_user", {multipart: true}) do %>
+   <% if @current_user.image_name == nil %>
+    <img src="/defult.jpg" alt="">
+   <% else %>
+    <img src="<%= "/user_images/#{@current_user.image_name}" %>">
+   <% end %>
+   <input type="file" name="image">
+
+
     <div class="input-form">
       <p>新しいユーザー名</p>
       <input class="form" type="text" name="name" value="<%= @current_user.name %>">

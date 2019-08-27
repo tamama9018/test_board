@@ -16,7 +16,7 @@
            <% if @user.image_name == nil %>
              <img src="/defult.jpg">
            <% else %>
-             <img src="<% @user.image_name %>" alt="">
+            <img src="<%= "/user_images/#{@user.image_name}" %>">
            <% end %>
           </div>
           <div class="user-name">

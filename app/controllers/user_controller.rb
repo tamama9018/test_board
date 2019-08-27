@@ -3,6 +3,14 @@ before_action :restruct_logout_user, {only: [:logout, :edit, :edit_user]}
 before_action :restruct_login_user, {only: [:login, :login_check]}
 
   def edit_user
+      if params[:image]
+         image = params[:image]
+         @current_user.image_name = "#{@current_user.id}.jpg"
+         @current_user.save
+         File.binwrite("public/user_images/#{@current_user.image_name}", image.read)
+         render("user/edit") and return
+      end
+
       if params[:pass1] == params[:pass2]
           @current_user.name = params[:name]
           @current_user.password = params[:pass2]
