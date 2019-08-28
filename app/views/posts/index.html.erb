@@ -9,7 +9,7 @@
        <% @posts.each do |post| %>
         <% @user = User.find_by(id: post.user_id) %>
          <% if @user == nil %>
-          <p>error</p>
+          <% next %>
          <% else %>
         <div class="post-container">
          <div class="icon">
@@ -22,14 +22,19 @@
           <div class="user-name">
            <%= @user.name %>
          </div>
+         <div class="date">
+           <%= post.created_at %>
+         </div>
+
           <div class="post-content">
-            <%= post.content %>
+            <%= simple_format(post.content) %>
           </div>
-          <div class="date">
-            <%= post.created_at %>
-          </div>
+
         </div>
         <% end %>
        <% end %>
+     </div>
+     <div class="more-posts">
+       <a href="#">More</a>
      </div>
 </div>

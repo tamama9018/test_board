@@ -2,8 +2,8 @@ class PostsController < ApplicationController
 before_action :restruct_logout_user
 
   def index
-    @posts = Post.all.order(created_at: :desc)
-    
+    @show_max = 15
+    @posts = Post.all.order(created_at: :desc).first(@show_max)
   end
 
   def new

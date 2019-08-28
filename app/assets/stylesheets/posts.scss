@@ -40,7 +40,7 @@
   margin: 0 auto;
   width: 60%;
   background-color: white;
-  padding:20px 30px;
+  padding:15px 30px;
   box-shadow: 0 2px 6px #c1ced7;
   img{
       width: 50px;
@@ -62,8 +62,18 @@
   font-size: 14px;
   color:rgb(97, 97, 97);
   text-align: right;
+  padding-top: 10px; 
 }
 
 .icon{
     float: left;
+}
+
+.more-posts{
+  margin: 30px;
+  a{
+    font-size: 20px;
+    padding: 5px;
+  }
+
 }
